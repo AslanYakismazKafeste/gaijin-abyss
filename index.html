@@ -125,7 +125,28 @@ function update(){
 }
 update(); setInterval(update,1000);
 </script>
-audio id="ourSong" src="./dilerim-ki.mp3" loop></audio>
+<div style="text-align:center; margin:35px auto;">
+  <p style="color:#e6b8c5; font-size:22px;">
+    ♡ Hikâyemize eşlik et ♡
+  </p>
+
+  <p style="color:#c7a6b0;">
+    Bu şarkı biraz da bizim hikâyemiz...
+  </p>
+
+  <button id="musicButton" style="
+    background:#641b35;
+    color:white;
+    border:1px solid #bd718e;
+    border-radius:30px;
+    padding:13px 25px;
+    cursor:pointer;
+    font-size:15px;">
+    ♫ DİNLEMEK İÇİN DOKUN
+  </button>
+</div>
+
+<audio id="ourSong" src="./dilerim-ki.mp3" loop></audio>
 
 <script>
 const song = document.getElementById("ourSong");
