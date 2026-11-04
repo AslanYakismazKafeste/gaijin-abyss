@@ -125,21 +125,24 @@ function update(){
 }
 update(); setInterval(update,1000);
 </script>
-<audio id="ourSong" autoplay loop>
-  <source src="./dilerim-ki.mp3" type="audio/mpeg">
-</audio>
+audio id="ourSong" src="./dilerim-ki.mp3" loop></audio>
 
 <script>
 const song = document.getElementById("ourSong");
+const button = document.getElementById("musicButton");
 
-song.volume = 0.5;
-
-window.addEventListener("load", () => {
-  song.play().catch(() => {
-    document.addEventListener("click", () => {
-      song.play();
-    }, { once: true });
-  });
+button.addEventListener("click", async () => {
+  if (song.paused) {
+    try {
+      await song.play();
+      button.textContent = "♫ ŞARKIYI DURAKLAT";
+    } catch (error) {
+      button.textContent = "TEKRAR DENE ♡";
+    }
+  } else {
+    song.pause();
+    button.textContent = "♫ DİNLEMEK İÇİN DOKUN";
+  }
 });
 </script>
 </body>
