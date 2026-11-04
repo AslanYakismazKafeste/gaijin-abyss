@@ -125,5 +125,22 @@ function update(){
 }
 update(); setInterval(update,1000);
 </script>
+<audio id="ourSong" autoplay loop>
+  <source src="./dilerim-ki.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const song = document.getElementById("ourSong");
+
+song.volume = 0.5;
+
+window.addEventListener("load", () => {
+  song.play().catch(() => {
+    document.addEventListener("click", () => {
+      song.play();
+    }, { once: true });
+  });
+});
+</script>
 </body>
 </html>
